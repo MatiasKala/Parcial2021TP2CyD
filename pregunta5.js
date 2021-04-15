@@ -20,3 +20,18 @@ const beers = [
     { name: 'Stolen Fruit', abv: 4.6, label: 'https://s3.amazonaws.com/brewerydbapi/beer/YGT30k/upload_uVCHP7-large.png', type: 'Wheat' },
 ];
 
+const actualizarRepositorio= function(beers){
+  const nuevoSitio='https://tecnoshare.sharepoint.com/sites/beer'
+  let nuevoBeers= beers.map(
+    beer => ({...beer,label:nuevoSitio+`/${obtenerCarpeta(beer.name)}/${beer.name.toLowerCase().split(" ").join("")}.png`})
+  )
+
+  return nuevoBeers;
+}
+
+const obtenerCarpeta = function(name){
+  let array=beers[beers.findIndex(b => b.name==name)].label.split('/')
+  return label=array[array.length-2]
+}
+
+console.log(actualizarRepositorio(beers))

@@ -3,7 +3,26 @@
 // si la longitud del array es < 3 se debe retornar undefined
 
 const greater3 = nums => {
+    if(nums.length<3)  
+    return undefined;
     
+    nums=nums.sort()
+    
+    let index=nums.length-3;
+    let i=nums.length-1;
+    let iguales=2;
+
+    while(iguales>0 && i>0 && index>=0){
+        if(nums[i]==nums[i-1]){
+            index--
+        } else {
+            iguales--
+        }       
+        i--
+    }
+
+    return nums[index]
+
 }
 
 

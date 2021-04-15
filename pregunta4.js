@@ -21,8 +21,21 @@
    * @param {*} discoveries 
    * @param {*} inventors 
    */
-  function addDiscoveries(inventor, discoveries, inventors){
-      
+   function addDiscoveries(inventor, discoveries, inventors){
+
+    let bool=false;
+    let i=0;
+    while(!bool){
+      if(inventors[i].last==inventor){
+        bool=true;
+      } else {
+        i++
+      }
+    }
+
+    inventors[i].discoveries=discoveries;
+
+    return inventors;
   }
 
   console.log(addDiscoveries('Einstein', 

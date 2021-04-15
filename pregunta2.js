@@ -15,9 +15,16 @@
   }
 
 const sale = function (article, cant){
+  const ventaExitosa=200
+  const imposibleRealizarOperacion=500;
   
+  if(inventory[article]<cant){
+    return imposibleRealizarOperacion;
+  } else {
+    inventory[article]-=cant
+    return ventaExitosa;
+  }
 }
-
 // TESTS (no modificar)
 console.log(sale('shoes',8) === 200 && inventory.shoes === 2);
 console.log(sale('shoes',3) === 500 && inventory.shoes === 2);
