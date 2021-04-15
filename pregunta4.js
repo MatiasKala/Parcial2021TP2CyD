@@ -26,11 +26,7 @@
     let bool=false;
     let i=0;
     while(!bool){
-      if(inventors[i].last==inventor){
-        bool=true;
-      } else {
-        i++
-      }
+      inventors[i].last==inventor?bool=true:i++
     }
 
     inventors[i].discoveries=discoveries;
