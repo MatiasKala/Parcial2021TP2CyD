@@ -22,11 +22,9 @@ const beers = [
 
 const actualizarRepositorio= function(beers){
   const nuevoSitio='https://tecnoshare.sharepoint.com/sites/beer'
-  let nuevoBeers= beers.map(
+  return nuevoBeers= beers.map(
     beer => ({...beer,label:nuevoSitio+`/${obtenerCarpeta(beer.name)}/${beer.name.toLowerCase().split(" ").join("")}.png`})
   )
-
-  return nuevoBeers;
 }
 
 const obtenerCarpeta = function(name){
